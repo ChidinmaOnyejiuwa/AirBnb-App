@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:airbnb_app/global.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 
 class SignUpScreen extends StatefulWidget {
@@ -116,11 +117,12 @@ class _SignUpScreenState extends State<SignUpScreen>
                       padding: const EdgeInsets.only(top: 21),
                       child: TextFormField(
                         controller: _passwordTextEditingController,
+                        obscureText: true,
                         validator: (valuePassword)
                         {
                           if(valuePassword!.length < 5)
                           {
-                            return "Password must be atleast 6 or more characters";
+                            return "Password must be at least 6 or more characters";
                           }
                           return null;
                         },
@@ -235,9 +237,18 @@ class _SignUpScreenState extends State<SignUpScreen>
             Padding(
               padding: const EdgeInsets.only(top: 36.0),
               child: MaterialButton(
-                  onPressed: ()
+                  onPressed: () async
                   {
+                  var imageFile = await ImagePicker().pickImage(source: ImageSource.gallery);
 
+                  if(imageFile != null)
+                  {
+                   imageFileOfUser = File(imageFile!.path);
+                   setState(() {
+                     imageFileOfUser;
+                   });
+
+                  }
               },
                 child: imageFileOfUser == null ?
                 const Icon(Icons.add_a_photo)
