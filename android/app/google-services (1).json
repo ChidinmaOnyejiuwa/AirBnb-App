@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "685052619398",
+    "project_id": "airbnb--practice-app",
+    "storage_bucket": "airbnb--practice-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685052619398:android:30bcc90c18f3f21ddeff07",
+        "android_client_info": {
+          "package_name": "com.example.airbnbapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6ie1XrwdXKF2h9mbdWX7NFKRIbLqEF9E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
